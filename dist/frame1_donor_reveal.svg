@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7dfb5"/>
+      <stop offset="60%" stop-color="#f2d29d"/>
+      <stop offset="100%" stop-color="#e5c58b"/>
+    </linearGradient>
+    <linearGradient id="ground" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ddd3c1"/>
+      <stop offset="100%" stop-color="#c5b8a2"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a9c0c8"/>
+      <stop offset="100%" stop-color="#7c969f"/>
+    </linearGradient>
+    <linearGradient id="interiorGlow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8c980"/>
+      <stop offset="100%" stop-color="#e5a55c"/>
+    </linearGradient>
+    <filter id="softShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+    <filter id="tiltShift" x="0" y="0" width="100%" height="100%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0 0" result="sharp"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="url(#sky)"/>
+  <rect y="420" width="1920" height="660" fill="url(#ground)"/>
+
+  <!-- Low-poly Memphis context -->
+  <g opacity="0.6">
+    <rect x="120" y="490" width="120" height="120" fill="#b9b9b9"/>
+    <rect x="255" y="515" width="150" height="95" fill="#a8a8a8"/>
+    <rect x="430" y="495" width="110" height="120" fill="#b0b0b0"/>
+    <rect x="1420" y="520" width="170" height="120" fill="#adadad"/>
+    <rect x="1610" y="500" width="130" height="145" fill="#b7b7b7"/>
+  </g>
+
+  <!-- Family Commons -->
+  <g>
+    <ellipse cx="520" cy="760" rx="210" ry="90" fill="#8a9e73" opacity="0.65"/>
+    <circle cx="430" cy="730" r="35" fill="#6b8753"/>
+    <circle cx="505" cy="700" r="28" fill="#5e7a48"/>
+    <circle cx="570" cy="740" r="30" fill="#688450"/>
+    <circle cx="620" cy="710" r="24" fill="#5e7645"/>
+  </g>
+
+  <!-- Long warm shadows -->
+  <polygon points="770,360 990,360 1400,900 1180,900" fill="#9f8a68" opacity="0.25" filter="url(#softShadow)"/>
+
+  <!-- Hero building with subtle chamfer look -->
+  <g>
+    <polygon points="760,250 1030,250 1030,760 760,760" fill="#c5b39b"/>
+    <polygon points="1030,250 1140,310 1140,820 1030,760" fill="#b49e83"/>
+    <polygon points="760,250 870,310 1140,310 1030,250" fill="#d7c7b3"/>
+
+    <!-- Repeated wall modules + window modules -->
+    <g>
+      <rect x="790" y="300" width="210" height="420" fill="#b9a487"/>
+      <g fill="url(#glass)">
+        <rect x="805" y="320" width="40" height="55" rx="2"/>
+        <rect x="855" y="320" width="40" height="55" rx="2"/>
+        <rect x="905" y="320" width="40" height="55" rx="2"/>
+        <rect x="955" y="320" width="30" height="55" rx="2"/>
+
+        <rect x="805" y="390" width="40" height="55" rx="2"/>
+        <rect x="855" y="390" width="40" height="55" rx="2"/>
+        <rect x="905" y="390" width="40" height="55" rx="2"/>
+        <rect x="955" y="390" width="30" height="55" rx="2"/>
+
+        <rect x="805" y="460" width="40" height="55" rx="2"/>
+        <rect x="855" y="460" width="40" height="55" rx="2"/>
+        <rect x="905" y="460" width="40" height="55" rx="2"/>
+        <rect x="955" y="460" width="30" height="55" rx="2"/>
+
+        <rect x="805" y="530" width="40" height="55" rx="2"/>
+        <rect x="855" y="530" width="40" height="55" rx="2"/>
+        <rect x="905" y="530" width="40" height="55" rx="2"/>
+        <rect x="955" y="530" width="30" height="55" rx="2"/>
+
+        <rect x="805" y="600" width="40" height="55" rx="2"/>
+        <rect x="855" y="600" width="40" height="55" rx="2"/>
+        <rect x="905" y="600" width="40" height="55" rx="2"/>
+        <rect x="955" y="600" width="30" height="55" rx="2"/>
+      </g>
+
+      <!-- Interior mapping suggestion (warm cubemap illusion) -->
+      <g fill="url(#interiorGlow)" opacity="0.45">
+        <rect x="805" y="322" width="40" height="20"/>
+        <rect x="905" y="392" width="40" height="20"/>
+        <rect x="855" y="462" width="40" height="20"/>
+        <rect x="955" y="532" width="30" height="20"/>
+        <rect x="805" y="602" width="40" height="20"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Sky-bridge segment -->
+  <g>
+    <rect x="1140" y="500" width="260" height="42" rx="8" fill="#cdbda8"/>
+    <rect x="1148" y="508" width="244" height="24" fill="#90a8af" opacity="0.9"/>
+  </g>
+
+  <!-- St. Jude logo mark (red only for logo) -->
+  <circle cx="780" cy="736" r="10" fill="#c8102e"/>
+
+  <text x="80" y="96" font-family="Arial, sans-serif" font-size="44" fill="#3e3528" font-weight="700">Frame 1 · Donor Reveal</text>
+  <text x="80" y="142" font-family="Arial, sans-serif" font-size="28" fill="#5d513e">Soft Realism · Tilt-Shift Macro · Warm Interior Mapping</text>
+</svg>
