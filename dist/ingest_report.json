@@ -1,0 +1,21 @@
+{
+  "input": "source/clinical_tower_mock.rvt",
+  "source_type": "revit",
+  "triangle_counts": {
+    "source": 1000000,
+    "after_hidden_detail_cull": 180000,
+    "final_diorama_lod": 10000,
+    "target": 10000
+  },
+  "compression": {
+    "mesh": "clinical_tower_mock",
+    "codec": "draco",
+    "compression_level": 7,
+    "status": "simulated"
+  },
+  "next_steps": [
+    "Integrate meshopt + quadric decimation for real geometry",
+    "Add visibility sets by room/department",
+    "Emit glb + draco payloads for WebGL wrapper"
+  ]
+}
