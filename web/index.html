@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SP Spatial · Zoom-to-Flatten Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f2e4cc; color: #3e3528; }
+    .wrap { max-width: 1200px; margin: 24px auto; padding: 0 16px; }
+    .controls { display: flex; gap: 12px; align-items: center; margin-bottom: 16px; flex-wrap: wrap; }
+    button { border: 0; padding: 10px 14px; border-radius: 8px; background: #6f5c45; color: #fff; cursor: pointer; }
+    .stage { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 28px rgba(48,38,28,0.25); background: #ddd; }
+    .layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity 280ms ease; }
+    #focusLayer { opacity: 0; }
+    .caption { margin-top: 10px; font-size: 14px; color: #5d513e; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Zoom-to-Flatten Transition (Board Demo)</h1>
+    <div class="controls">
+      <label for="stressRange">Stress Mode</label>
+      <input id="stressRange" type="range" min="0" max="100" value="0" />
+      <button id="stressToggle" type="button">Simulate Stress Mode</button>
+      <span id="readout">Exploration: 100% · Focus: 0%</span>
+    </div>
+
+    <div class="stage" aria-label="Frame transition preview">
+      <img id="exploreLayer" class="layer" src="../dist/frame1_donor_reveal.svg" alt="Frame 1 exploration render" />
+      <img id="focusLayer" class="layer" src="../dist/frame2_trauma_informed_pivot.svg" alt="Frame 2 focus render" />
+    </div>
+    <p class="caption">Use slider or button to blend from soft-realism exploration (Frame 1) to trauma-informed focus mode (Frame 2).</p>
+  </div>
+
+  <script>
+    const range = document.getElementById('stressRange');
+    const toggle = document.getElementById('stressToggle');
+    const readout = document.getElementById('readout');
+    const explore = document.getElementById('exploreLayer');
+    const focus = document.getElementById('focusLayer');
+
+    function applyBlend(value) {
+      const v = Number(value);
+      const focusOpacity = v / 100;
+      const exploreOpacity = 1 - focusOpacity;
+      explore.style.opacity = exploreOpacity.toFixed(2);
+      focus.style.opacity = focusOpacity.toFixed(2);
+      readout.textContent = `Exploration: ${Math.round(exploreOpacity * 100)}% · Focus: ${Math.round(focusOpacity * 100)}%`;
+    }
+
+    range.addEventListener('input', () => applyBlend(range.value));
+    toggle.addEventListener('click', () => {
+      const next = range.value === '100' ? 0 : 100;
+      range.value = String(next);
+      applyBlend(next);
+    });
+
+    applyBlend(range.value);
+  </script>
+</body>
+</html>

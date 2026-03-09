@@ -1,0 +1,41 @@
+{
+  "version": "0.2.0",
+  "assets": [
+    {
+      "id": "clinical_tower_A1",
+      "category": "building",
+      "lod": "hero",
+      "source": "revit_mock",
+      "texture_atlas": "2k",
+      "physical_properties": {
+        "material": "glass",
+        "acoustic_absorption": 0.05,
+        "reverb_profile": "reflective"
+      }
+    },
+    {
+      "id": "family_commons_G1",
+      "category": "landscape",
+      "lod": "hero",
+      "source": "kitbash",
+      "texture_atlas": "2k",
+      "physical_properties": {
+        "material": "foliage_composite",
+        "acoustic_absorption": 0.42,
+        "reverb_profile": "diffuse"
+      }
+    },
+    {
+      "id": "skybridge_C1",
+      "category": "infrastructure",
+      "lod": "mid",
+      "source": "kitbash",
+      "texture_atlas": "2k",
+      "physical_properties": {
+        "material": "steel_glass",
+        "acoustic_absorption": 0.14,
+        "reverb_profile": "semi_reflective"
+      }
+    }
+  ]
+}
