@@ -1,0 +1,4 @@
+frame_id,deliverable_name,aspect_ratio,mode,primary_goal,required_techniques,forbidden_elements,output_notes
+F1,Donor Reveal,16:9,Desktop Macro,"Tactile emotional impact","Tilt-shift; shallow DoF; PBR brick/glass/stone; interior mapping cubemaps; soft GI","Sterile blue tint; harsh blacks; sharp 90-degree edges","Hero cluster only with family commons and one sky-bridge"
+F2,Trauma-Informed Pivot,9:16 split,Mobile,"Cognitive-load reduction proof","Left crop from F1; right-side flattening; matte paper model finish; Pantone 108C path","Red paths; heavy foliage; hard shadows on right panel","Path must route parking garage to main entrance clearly"
+F3,Feasibility Mic-Drop,16:9 triptych,Technical,"Production readiness confidence","Beauty pass; clean quad wireframe pass; watertight clay fabrication pass with nozzle overlay","Messy triangulated topology; mismatched geometry between passes","Use same hero asset in all 3 panels"
